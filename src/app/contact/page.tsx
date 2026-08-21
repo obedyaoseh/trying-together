@@ -41,6 +41,14 @@ export default function Contact() {
             <p style={{ marginBottom: '1rem' }}>We are building a private community for listeners. Sign up to be the first to know when doors open.</p>
             <EmailSignup />
           </div>
+
+          <div style={{ marginBottom: '3rem' }}>
+            <h2>Email Us</h2>
+            <ul style={{ marginTop: '1rem', listStyle: 'none', padding: 0 }}>
+              <li style={{ marginBottom: '0.5rem' }}>General Inquiries: <a href="mailto:hello@tryingtogetherpodcast.com">hello@tryingtogetherpodcast.com</a></li>
+              <li style={{ marginBottom: '0.5rem' }}>Partnerships: <a href="mailto:partnerships@tryingtogetherpodcast.com">partnerships@tryingtogetherpodcast.com</a></li>
+            </ul>
+          </div>
           
           <div>
             <h2>Social Media</h2>
