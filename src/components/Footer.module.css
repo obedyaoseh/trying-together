@@ -17,7 +17,7 @@
 .column {
   flex: 1;
   /* min() so a 250px floor cannot exceed a 360px viewport minus padding. */
-  min-width: min(250px, 100%);
+  min-width: min(220px, 100%);
 }
 
 .title {
@@ -52,6 +52,37 @@
 
 .socialLink:hover {
   color: var(--color-acorn-gold);
+}
+
+.platformList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.platformLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 40px;
+  color: var(--color-cream);
+  opacity: 0.9;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.platformLink:hover {
+  color: var(--color-acorn-gold);
+  opacity: 1;
+}
+
+.platformIcon {
+  flex-shrink: 0;
 }
 
 .bottom {

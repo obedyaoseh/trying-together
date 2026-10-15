@@ -20,7 +20,28 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   contactHeading: 'Get in Touch',
   contactIntro:
     'Want to share your story or apply as a guest? Send us a message and we will get back to you.',
-  listenLinks: [],
+  listenLinks: [
+    {
+      _key: 'default-apple',
+      platform: 'apple',
+      url: 'https://podcasts.apple.com/us/podcast/trying-together-podcast/id6820514661',
+    },
+    {
+      _key: 'default-spotify',
+      platform: 'spotify',
+      url: 'https://open.spotify.com/show/23DWhJ3MzBDWsqqlIcX8oV',
+    },
+    {
+      _key: 'default-amazon',
+      platform: 'amazon',
+      url: 'https://music.amazon.com/podcasts/4374e82b-cf0b-41bd-b582-ffddc3e26639/trying-together-podcast',
+    },
+    {
+      _key: 'default-youtube',
+      platform: 'youtube',
+      url: 'https://youtube.com/@tryingtogetherpodcast?si=tLFd-g4mZic0P4e5',
+    },
+  ],
   socialLinks: [],
 };
 
