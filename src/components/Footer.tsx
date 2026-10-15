@@ -1,8 +1,14 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
 import EmailSignup from './EmailSignup';
+import PlatformIcon from './PlatformIcon';
+import { getSiteSettings } from '@/sanity/lib/content';
+import { platformMeta } from '@/lib/platforms';
 
-export default function Footer() {
+export default async function Footer() {
+  const settings = await getSiteSettings();
+  const listenLinks = settings.listenLinks ?? [];
+
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.content}`}>
@@ -16,6 +22,32 @@ export default function Footer() {
             <a href="#" className={styles.socialLink}>TikTok</a>
             <a href="#" className={styles.socialLink}>YouTube</a>
           </div>
+        </div>
+        <div className={styles.column}>
+          <h3 className={styles.title}>Listen On</h3>
+          {listenLinks.length > 0 ? (
+            <ul className={styles.platformList}>
+              {listenLinks.map((link, index) => {
+                const meta = platformMeta(link.platform);
+                const label = link.customLabel?.trim() || meta?.label || 'Podcast Platform';
+                return (
+                  <li key={link._key ?? `${link.platform}-${index}`}>
+                    <a
+                      href={link.url}
+                      className={styles.platformLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <PlatformIcon platform={link.platform} className={styles.platformIcon} size={18} />
+                      <span>{label}</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <p className={styles.text}>Links coming soon.</p>
+          )}
         </div>
         <div className={styles.column}>
           <h3 className={styles.title}>Quick Links</h3>
